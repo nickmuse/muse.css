@@ -1,0 +1,180 @@
+/* color */
+:root {
+    /* palette*/
+    --red:                  #BF616A;  
+    --orange:               #D08770;  
+    --yellow:               #EBCB8B;  
+    --green:                #A3BE8C;  
+    --blue:                 #5E81AC;  
+    --purple:               #B48EAD;  
+    --white:                #f8f9fb;  
+    --graydark:             #4C566A;  
+    --gray:                 #b2b5bf;
+    --graylight:            #D8DEE9;  
+    --black:                #282a36;  
+    --pink:                 #ff79c6;
+    /* general */
+    --body-text:            var(--black);
+    --body-bg:              var(--white);
+    --url-text:             var(--blue);
+    /* popups */
+    --popup-header-text:    var(--black);
+    --popup-header-box:     var(--graylight);
+    --popup-text:           var(--black);
+    --popup-box:            var(--graylight);
+    --popup-shadow:         var(--gray);
+    /* code blocks */
+    --code-text:            var(--graydark);
+    --code-box:             var(--graylight);
+    /* controls */
+    --control-text:         var(--black);
+    --button-enabled:       var(--blue);
+    --button-disabled:      var(--gray);
+    --button-shadow:        var(--graydark);
+}
+/* divs for splitting screen */
+.left-pane              {
+    width                   : 30%;
+    height                  : 100%;
+    float                   : left;
+    text-align              : center;
+    margin                  : 0px;
+}
+.right-pane             {
+    width                   : 70%;
+    height                  : 100%;
+    float                   : right;
+    text-align              : center;
+    margin                  : 0px;
+    overflow-x              : hidden;
+    overflow-y              : scroll;
+    scroll-snap-type        : y mandatory;
+    scroll-padding          : 40px; /* should match table top margin */
+}
+.grid-container {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: auto auto;
+}
+.grid-item {
+    height: 0px;
+}
+/* animations */
+@keyframes arrive {
+    from { transform        : scale(0.5) translateY(00px) rotate(000deg); opacity: 0; }
+    to { transform          : scale(1.0) translate(0000px) rotate(000deg); opacity: 1; }
+}   
+* {
+    animation               : arrive .2s ease-in-out 100ms backwards;
+}
+body {
+    background-color        : var(--body-bg);
+    background-image        : linear-gradient(to bottom, var(--white), var(--white), var(--white), var(--graylight));
+    margin                  : 0px;
+}
+body, p, label {
+    font-family             : "Montserrat", sans-serif;
+    font-size               : 13px;
+    color                   : var(--body-text);
+}
+a {
+    color                   : var(--url-text);
+}
+table {
+    font-size               : 12px;
+    margin-left             : 40px;
+    margin-right            : 40px;
+    margin-top              : 40px;
+    margin-bottom           : 40px;
+    width                   : 90%;
+    border-radius           : 10px;
+    overflow                : hidden;
+    padding                 : 0px;
+    border-spacing          : 0px;
+    box-shadow              : 5px 5px 30px var(--popup-shadow);
+    color                   : var(--popup-text);
+    background-color        : var(--popup-box);
+    box-shadow              : 0px 20px 25px var(--popup-shadow),  var(--popup-shadow) 0 9px 0;
+    scroll-snap-align       : start none;
+}
+td {
+    padding                 : 20px;
+}
+th {
+    color                   : var(--popup-header-text);
+    background-color        : var(--popup-header-box);
+    text-align              : center;
+    font-weight             : bolder;
+    padding                 : 10px;
+}
+samp, code {
+    background-color        : var(--code-box);
+    padding                 : 15px;
+    color                   : var(--code-text);
+    font-weight             : bold;
+    border-radius           : 15px;
+    font-family             : "Consolas", monospace;
+    box-shadow              : 1px 1px 100px var(--popup-shadow),  var(--popup-shadow) 0 -4px 0;
+}
+/* controls */
+button, input, select {
+    /*general*/
+    display                 : inline-flex;
+    overflow                : hidden;
+    position                : relative;
+    /*size*/
+    height                  : 64px;
+    border-width            : 0;
+    padding-left            : 16px;
+    padding-right           : 16px;
+    /*style*/
+    border-radius           : 20px;
+    color                   : var(--control-text);
+    justify-content         : center;
+    text-align              : center;
+    align-items             : center;
+    font-size               : 18px;
+    font-weight             : bold;
+    font-family             : "Consolas",monospace;
+    white-space             : nowrap;
+    &:disabled {
+        opacity             : 1;
+    };
+}
+button {
+    cursor                  : pointer;
+    background-color        : var(--button-enabled);
+    transition              : box-shadow .1s, transform .1s;
+    touch-action            : manipulation;
+    will-change             : box-shadow, transform;
+    &:disabled {
+        background-color    : var(--button-disabled);
+    };
+}
+button:hover {
+    box-shadow              : 0px 20px 25px var(--button-shadow), var(--button-shadow) 0 9px 0;
+    transform               : translateY(-9px) scale(1);
+}
+button:active {
+    box-shadow              : 0px 5px 25px var(--button-shadow), var(--button-shadow) 0 0px 0;
+    transform               : translateY(2px) scale(.95);
+}
+input {
+    color                   : var(--body-text);
+    background-color        : var(--graylight);
+}
+input::placeholder  {
+    color                   : #6272a4;
+}
+/* scrollbar */
+::-webkit-scrollbar {
+    width                   : 30px;
+}
+::-webkit-scrollbar-thumb {
+    background              : var(--graylight); 
+    border-radius           : 25px;
+    box-shadow              : var(--popup-shadow) 0 -9px 0 inset;
+}
+::-webkit-scrollbar-thumb:hover {
+    background              : var(--gray); 
+}
