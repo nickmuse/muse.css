@@ -76,9 +76,14 @@ body, p, label {
     font-family             : "Montserrat", sans-serif;
     font-size               : 13px;
     color                   : var(--body-text);
+    
+}
+label {
+    margin: 20px;
 }
 a {
     color                   : var(--url-text);
+    font-weight             : bold;
 }
 table {
     font-size               : 12px;
@@ -86,7 +91,7 @@ table {
     margin-right            : 40px;
     margin-top              : 40px;
     margin-bottom           : 40px;
-    width                   : 90%;
+    /*width                   : 90%;*/
     border-radius           : 10px;
     overflow                : hidden;
     padding                 : 0px;
@@ -115,18 +120,21 @@ samp, code {
     border-radius           : 15px;
     font-family             : "Consolas", monospace;
     box-shadow              : 1px 1px 100px var(--popup-shadow),  var(--popup-shadow) 0 -4px 0;
+    display                 : inline-block;
 }
 /* controls */
 button, input, select {
     /*general*/
-    display                 : inline-flex;
+    display                 : inline-block;
     overflow                : hidden;
     position                : relative;
     /*size*/
-    height                  : 64px;
+    height                  : 48px;
     border-width            : 0;
     padding-left            : 16px;
     padding-right           : 16px;
+    margin-top              : 10px;
+    margin-bottom           : 10px;
     /*style*/
     border-radius           : 20px;
     color                   : var(--control-text);
@@ -159,12 +167,19 @@ button:active {
     box-shadow              : 0px 5px 25px var(--button-shadow), var(--button-shadow) 0 0px 0;
     transform               : translateY(2px) scale(.95);
 }
-input {
+input, textarea {
+    font-family             : "Montserrat", sans-serif;
+    font-size               : 14px;
     color                   : var(--body-text);
     background-color        : var(--graylight);
+    box-shadow              : 1px 1px 100px var(--popup-shadow),  var(--popup-shadow) 0 -4px 0;
 }
-input::placeholder  {
-    color                   : #6272a4;
+input::placeholder, textarea::placeholder {
+    color                   : var(--gray);
+}
+input:focus, textarea:focus{
+    outline                 : 5px dotted var(--gray);
+    outline-offset          : -10px;
 }
 /* scrollbar */
 ::-webkit-scrollbar {
@@ -177,4 +192,73 @@ input::placeholder  {
 }
 ::-webkit-scrollbar-thumb:hover {
     background              : var(--gray); 
+}
+
+
+
+ /* slider */
+
+/* square container around the slider */
+.switch {
+    position            : relative;
+    display             : inline-block;
+    width               : 88px;
+    height              : 48px;
+}
+/* hide default junk */
+.switch input {
+    opacity             : 0;
+    width               : 0;
+    height              : 0;
+}
+/* slider track */
+.slider {
+    position            : absolute;
+    cursor              : pointer;/*inh*/
+    top                 : 0;
+    left                : 0;
+    right               : 0;
+    bottom              : 0;
+    background-color    : var(--red);
+    -webkit-transition  : .2s;
+    transition          : .2s;
+    border-radius       : 20px;
+    box-shadow          : var(--popup-shadow) 0 -4px 0;
+}
+input:checked + .slider {
+    background-color    : var(--blue);
+}
+/* slider ball */
+.slider:before {
+    position            : absolute;
+    content             : "";
+    height              : 40px;
+    width               : 40px;
+    left                : 4px;
+    bottom              : 4px;
+    background-color    : var(--graylight);
+    -webkit-transition  : .2s;
+    transition          : .2s;
+    border-radius       : 15px;
+    box-shadow          : 0px 10px 25px var(--graydark), var(--button-shadow) 0 4px 0;
+    transform           : translateY(-4px) scale(1);
+}
+.slider:hover:before {
+    box-shadow          : 0px 10px 25px var(--graydark), var(--button-shadow) 0 16px 0;
+    transform           : translateY(-16px) scale(1);
+}
+input:focus + .slider {
+    /*box-shadow          : 0 0 1px #2196F3;*/
+    /*box-shadow          : var(--popup-shadow) 0 -4px 0;*/
+}
+input:checked + .slider:before {
+    -webkit-transform   : translateX(40px) translateY(-4px);
+    -ms-transform       : translateX(40px) translateY(-4px);
+    transform           : translateX(40px) translateY(-4px);
+}
+
+input:checked + .slider:hover:before {
+    -webkit-transform   : translateX(40px) translateY(-16px);
+    -ms-transform       : translateX(40px) translateY(-16px);
+    transform           : translateX(40px) translateY(-16px);
 }
