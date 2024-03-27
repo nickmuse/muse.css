@@ -1,10 +1,10 @@
 <head>
     <title>muse.css</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Droid+Sans|Consolas|Noto+Sans|Raleway|Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Consolas|Montserrat">
     <link rel="stylesheet" href="muse.css">
 </head>
 <body>
-    <table width="400">
+    <table>
         <tr>
             <th colspan="2" style="background-color:var(--blue);">
                 muse.css
@@ -16,31 +16,36 @@
                 <p>&#128273;&#xFE0E; This is my re-usable CSS file </p>
                 <h3>Why</h3>
                 <p>Because I don't want to write any more CSS</p>
-                <h3>How</h3>
-                <code width="100%">&lt;link rel="stylesheet" href="muse.css"&gt;</code>
-                <h3>Demo</h3>
+                <h3>Setup</h3>
+                <code width="100%">
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Consolas|Montserrat"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="muse.css"&gt;<br>
+                    &lt;/head&gt;<br>
+                </code>
+                <h3>Usage</h3>
                 <p>This is a code block</p>
                 <code width="100%">
-                    &lt;body&gt; &lt;p&gt; &lt;a&gt; &lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt; &lt;code&gt; &lt;button&gt; &lt;input&gt;
+                    &lt;body&gt; &lt;p&gt; &lt;a&gt; &lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt; &lt;code&gt; &lt;hr&gt; &lt;button&gt; &lt;input&gt;
                 </code>
-                <center>
                 <p>Here are some buttons</p>
                 <button style="background-color:var(--orange);">work</button>
                 <button style="background-color:var(--yellow);">in</button>
                 <button style="background-color:var(--purple);">progress</button>
                 <br>
+                <p>I hope this checks off some of your boxes</p>
+                <label class="switch"><input type="checkbox"><span class="slider"></span></label><label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                <center>
+                <hr>
                 <p>You can pretend to log in</p>
-                <label>username</label>
                 <input type="text" placeholder="username"></input>
                 <br>
-                <label>password</label>
-                <input type="password" placeholder="password"></input>
-                <br>
+                <input type="password" placeholder="password"></input><br>
                 <button style="background-color:var(--blue);">login</button>
                 <button style="background-color:var(--gray);">reset</button>
-                <p>I hope this checks off some of your boxes</p>
-                <label class="switch"><input type="checkbox"><span class="slider"></span></label>
-                <label class="switch"><input type="checkbox"><span class="slider"></span></label><br>
+                <p>But all that did was send me your password</p>
+                <p><i>Just kidding</i></p>
+                <br>
                 </center>
             </td>
         </tr>
