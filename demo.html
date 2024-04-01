@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Consolas|Montserrat">
         <link rel="stylesheet" href="muse.css">
     </head>
-    <body></body> <!--style="background-image:url('hamilton.jpg');"-->
+    <body>
         <div class="pane pane-left">
             <!-- login box -->
             <table>
@@ -97,39 +97,7 @@
             <!-- blog post -->
             <table><tr><th colspan="2" style="background-color:var(--purple);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
         </div>
+        <script type="text/javascript" src="toggle_dark.js"></script>
     </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-    var checkbox = document.querySelector("input[name=toggle_dark]");
-    checkbox.addEventListener(
-        'change',
-        function() {
-            var element = document.body;
-            if (this.checked) {
-                localStorage.setItem('darkModeEnabled', true);
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                localStorage.setItem('darkModeEnabled', false);
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        }
-    );
-    if (localStorage.getItem('darkModeEnabled') == 'true') {
-        checkbox.checked = true;
-        document.documentElement.setAttribute('data-theme', 'dark');
-    };
-
     
-</script>
+</html>

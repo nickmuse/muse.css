@@ -108,6 +108,12 @@
         width: 100%;
         height: auto;
     }
+    .pane-left > table {
+        width: 100%;
+        margin-top: 0px;
+        border-radius: 0px;
+        font-size:100px;
+    }
     .pane-right {
         float                       : right;
         width: 100%; /* Adjust width for smaller screens */
