@@ -1,63 +1,135 @@
-<head>
-    <title>muse.css</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Consolas|Montserrat">
-    <link rel="stylesheet" href="muse.css">
-</head>
-<body>
-    <table>
-        <tr>
-            <th colspan="2" style="background-color:var(--blue);">
-                muse.css
-            </th>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <h3>What</h3>
-                <p>&#128273;&#xFE0E; This is my re-usable CSS file </p>
-                <h3>Why</h3>
-                <p>Because I don't want to write any more CSS</p>
-                <h3>Setup</h3>
-                <p>Obtain the file, and this demo, from <a href="https://github.com/nickmuse/muse.css">GitHub</a>.</p>
-                <p>Then reference it, and the font dependencies, in your HTML:</p>
-                <code width="100%">
-                    &lt;head&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Consolas|Montserrat"&gt;<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="muse.css"&gt;<br>
-                    &lt;/head&gt;<br>
-                </code>
-                <h3>Usage</h3>
-                <p>Basic tags are pre-styled</p>
-                <code width="100%">
-                    &lt;body&gt; &lt;p&gt; &lt;a&gt; &lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt; &lt;code&gt; &lt;hr&gt; &lt;button&gt; &lt;input&gt;
-                </code>
-                <p>Here are some buttons</p>
-                <button style="background-color:var(--orange);">work</button>
-                <button style="background-color:var(--yellow);">in</button>
-                <button style="background-color:var(--purple);">progress</button>
-                <br>
-                <p>I hope this checks off some of your boxes</p>
-                <label class="switch"><input type="checkbox"><span class="slider"></span></label><label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
-                <center>
-                <hr>
-                <p>You can pretend to log in</p>
-                <input type="text" placeholder="username"></input>
-                <br>
-                <input type="password" placeholder="password"></input><br>
-                <button style="background-color:var(--blue);">login</button>
-                <button style="background-color:var(--gray);">reset</button>
-                <p>But all that did was send me your password</p>
-                <p><i>Just kidding</i></p>
-                <br>
-                </center>
-            </td>
-        </tr>
-        <tr>
-            <td width="50%">
-                &#128225;&#xFE0E; <a href="https://nickmuse.com">nickmuse.com</b>
-            </td>
-            <td width="50%" style="text-align: right;">
-                &#128198;&#xFE0E; 2024
-            </td>
-        </tr>
-    </table>
-</body>
+<html data-theme="light">
+    <head>
+        <title>muse.css</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Consolas|Montserrat">
+        <link rel="stylesheet" href="muse.css">
+    </head>
+    <body></body> <!--style="background-image:url('hamilton.jpg');"-->
+        <div class="pane pane-left">
+            <!-- login box -->
+            <table>
+                <tr><th style="background-color:var(--orange);">Login</th></tr>
+                <tr>
+                    <td>
+                        <center>
+                            <input type="text" placeholder="username"></input><br>
+                            <input type="password" placeholder="password"></input><br>
+                            <button>login</button>
+                            <button>reset</button><br>
+                            <label class="switch"><input name="toggle_dark" type="checkbox"><span class="slider"></span></label>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+            <!-- error box -->
+            <table>
+                <tr><th style="background-color:var(--purple);">Error</th></tr>
+                <tr>
+                    <td>
+                        <center>
+                            6174: somethin' ain't right<br>
+                            <button>OK</button>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="pane pane-right">
+            <!-- muse.css -->
+            <table>
+                <tr>
+                    <th colspan="2" style="background-color:var(--blue);">
+                        muse.css
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>What</h4>
+                        <p>&#128273;&#xFE0E; This is my re-usable CSS file </p>
+                        <h4>Why</h4>
+                        <p>Because I don't want to write any more CSS</p>
+                        <h4>Setup</h4>
+                        <p>Obtain the CSS file (and this HTML demo) from <a href="https://github.com/nickmuse/muse.css">GitHub</a>.</p>
+                        <p>Reference the CSS, and font dependencies, in your HTML:</p>
+                        <code width="100%">
+                            &lt;head&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="<em>muse.css</em>"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Consolas|Montserrat"&gt;<br>
+                            &lt;/head&gt;
+                        </code>
+                        <p>Basic tags are pre-styled:</p>
+                        <code width="100%">
+                            &lt;body&gt; &lt;p&gt; &lt;a&gt; &lt;table&gt; &lt;tr&gt; &lt;th&gt; &lt;td&gt; &lt;code&gt; &lt;hr&gt; &lt;button&gt; &lt;input&gt;
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        &#128225;&#xFE0E; <a href="https://nickmuse.com">nickmuse.com</b>
+                    </td>
+                    <td width="50%" style="text-align: right;">
+                        &#128198;&#xFE0E; 2024
+                    </td>
+                </tr>
+            </table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--red);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--orange);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--yellow);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--green);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--blue);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--purple);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--red);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--orange);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--yellow);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--green);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--blue);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+            <!-- blog post -->
+            <table><tr><th colspan="2" style="background-color:var(--purple);">Blog Post</th></tr><tr><td><p>Description previewing blog<br><a>Read more...</a></p></td></tr></table>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var checkbox = document.querySelector("input[name=toggle_dark]");
+    checkbox.addEventListener(
+        'change',
+        function() {
+            var element = document.body;
+            if (this.checked) {
+                localStorage.setItem('darkModeEnabled', true);
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                localStorage.setItem('darkModeEnabled', false);
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+    );
+    if (localStorage.getItem('darkModeEnabled') == 'true') {
+        checkbox.checked = true;
+        document.documentElement.setAttribute('data-theme', 'dark');
+    };
+
+    
+</script>
