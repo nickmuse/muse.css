@@ -80,7 +80,21 @@
 #dark table {box-shadow: 0px 0px 0px 0px;}
 */
 
+/* animations */
+@keyframes arrive {
+    from { transform            : scale(0.5) translateY(00px) rotate(000deg); opacity: 0; }
+    to { transform              : scale(1.0) translate(0000px) rotate(000deg); opacity: 1; }
+}
+* {
+    margin                      : 0px;
+    padding                     : 0px;
+    animation                   : arrive .2s ease-in-out 100ms backwards;
+    transition                  : var(--transition-dark-mode);
+}
 /* divs for splitting screen */
+.navigation {
+    width:100%;
+}
 .pane {
     height                      : 100%;
     text-align                  : center;
@@ -108,12 +122,12 @@
         width: 100%;
         height: auto;
     }
-    .pane-left > table {
+    /*.pane-left > table {
         width: 100%;
         margin-top: 0px;
         border-radius: 0px;
         font-size:100px;
-    }
+    }*/
     .pane-right {
         float                       : right;
         width: 100%; /* Adjust width for smaller screens */
@@ -130,17 +144,7 @@
 .grid-item {
     height: 0px;
 }
-/* animations */
-@keyframes arrive {
-    from { transform            : scale(0.5) translateY(00px) rotate(000deg); opacity: 0; }
-    to { transform              : scale(1.0) translate(0000px) rotate(000deg); opacity: 1; }
-}
-* {
-    animation                   : arrive .2s ease-in-out 100ms backwards;
-    transition                  : var(--transition-dark-mode);
-    margin: 0;
-    padding: 0;
-}
+/* elements */
 body {
     background-color            : var(--col-body-bg);
     /*background-image            : linear-gradient(to bottom, var(--white), var(--white), var(--white), var(--graylight));*/
