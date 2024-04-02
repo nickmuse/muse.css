@@ -107,27 +107,30 @@
     /*animation                   : arrive .2s ease-in-out 100ms backwards;*/
     transition                  : var(--transition-dark-mode);
 }
-/* divs for splitting screen */
-.navigation, .navigation table {
-    width                       :100%;
-    max-width                   : none;
-    margin-top                  : 0px;
-    border-radius               : 0px;
+/* divs for nav screen */
+.navigation {
+    height                      : 5rem;
+    vertical-align: middle;
 }
-.navigation td {
-    padding-top                 : 0px;
-    padding-bottom              : 0px;
-    padding-left                : 2rem;
-    padding-right               : 2rem;
-    text-align                  : right;
-}
-.navigation * {
-    font-size                   : 1.5rem;
+.nav-left {
+    float                       : left;
+    padding-left                : 1rem;
+    height                      : 5rem;
+    line-height:                  5rem;
     vertical-align              : middle;
 }
-.navigation p, label {
-    display                     :inline-block;
+.nav-left img {
+    height: 100%;
+    display:inline-block;
+    margin:auto;
 }
+.nav-right {
+    float                       : right;
+    padding-right               : 1%;
+    height                      : 100%;
+}
+
+/* divs for splitting content screen */
 .content {
     overflow-y                  : scroll;
 }
