@@ -1,4 +1,7 @@
 :root {
+    /* fonts */
+    --font-regular              : "Montserrat", sans-serif;
+    --font-monospace            : "Consolas", monospace;
     /* color palette */
     --red                       :#BF616A;  
     --orange                    :#D08770;  
@@ -7,26 +10,27 @@
     --blue                      :#5E81AC;  
     --purple                    :#B48EAD;  
     --white                     :#f8f9fb;  
-    --graydark                  :#4C566A;  
     --gray                      :#b2b5bf;
-    --graylight                 :#D8DEE9;  
     --black                     :#282a36;  
     --pink                      :#ff79c6;
-    /* fonts */
-    --font-regular              : "Montserrat", sans-serif;
-    --font-monospace            : "Consolas", monospace;
+    /*
+    --graydark                  :#4C566A; 
+    --graylight                 :#D8DEE9;  
+    */
+    --graydark                  : color-mix(in srgb, var(--gray), var(--black));
+    --graylight                 : color-mix(in srgb, var(--gray), var(--white));
+
     /* sizes */
-    --common-border-radius      : 7px;
+    --common-border-radius      : .3rem;
     --size-text-control         : 1rem;
     --size-text-regular         : .8rem;
-    --slider-size               : 2.5rem;
-    --slider-size               : 2.5rem;
+    --slider-size               : 2rem;
     --slider-buffer             : .3rem;
     /* 3d */
-    --height-depressed          : -4px;
-    --height-flat               : 0px; 
-    --height-raised             : 4px;
-    --height-focused            : 9px;
+    --height-depressed          : -.25rem;
+    --height-flat               : 0; 
+    --height-raised             : .25rem;
+    --height-focused            : .56rem;
     --height-raised-negative    : calc(-1*var(--height-raised));
     --height-focused-negative   : calc(-1*var(--height-focused));
     --boxshadow-inner-regular   : var(--col-window-edge) 0 var(--height-depressed) 0;
@@ -38,6 +42,7 @@
     --transition-control        : .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
  /* colors */
+
 [data-theme="light"] {
     --col-body-bg               : var(--white);
     --col-text-regular          : var(--black);
@@ -74,6 +79,17 @@
     --col-slider-off            : var(--graylight);
     --col-slider-on             : var(--blue);
 }
+[data-theme="light"] table {
+    /*box-shadow: var(--black) 0 2px 6px 0;*/
+    box-shadow: var(--gray) 2.5rem 1rem 0rem 0rem;
+    box-shadow: color-mix(in srgb, var(--gray), transparent 90%) .2rem .9rem 0rem 0rem;
+    box-shadow: color-mix(in srgb, var(--graydark), transparent 90%) 0 2px 19px 0;
+}
+[data-theme="dark"] table {
+    /*box-shadow: 0px 0px 0px 0px;*/
+    box-shadow: var(--graydark) 0rem 0rem 0rem 0rem;
+    /*box-shadow: color-mix(in srgb, var(--gray), transparent 90%) 0rem .7rem 0rem 0rem;*/
+}
 
 /*
 #light.table {box-shadow: var(--black) 0px 2px 8px 0px;}
@@ -88,39 +104,68 @@
 * {
     margin                      : 0px;
     padding                     : 0px;
-    animation                   : arrive .2s ease-in-out 100ms backwards;
+    /*animation                   : arrive .2s ease-in-out 100ms backwards;*/
     transition                  : var(--transition-dark-mode);
 }
 /* divs for splitting screen */
-.navigation {
-    width:100%;
+.navigation, .navigation table {
+    width                       :100%;
+    max-width                   : none;
+    margin-top                  : 0px;
+    border-radius               : 0px;
+}
+.navigation td {
+    padding-top                 : 0px;
+    padding-bottom              : 0px;
+    padding-left                : 2rem;
+    padding-right               : 2rem;
+    text-align                  : right;
+}
+.navigation * {
+    font-size                   : 1.5rem;
+    vertical-align              : middle;
+}
+.navigation p, label {
+    display                     :inline-block;
+}
+.content {
+    overflow-y                  : scroll;
 }
 .pane {
     height                      : 100%;
-    text-align                  : center;
     margin                      : 0px;
-    /* debug */
-    border                      : 0px solid;
-    box-sizing                  : border-box;
-    border-color                : red;
-    padding:0px
+    padding                     : 0px
 }
 .pane-left              {
     width                       : 30%;
     float                       : left;
+    text-align                  : right;
 }
 .pane-right             {
     width                       : 70%;
     float                       : right;
+    text-align                  : left;
     overflow-x                  : hidden;
     overflow-y                  : scroll; /*scroll*/
-    scroll-snap-type            : y mandatory;
+    scroll-snap-type            : y proximity;
     scroll-padding              : 40px; /* should match table top margin */
 }
-@media (max-width: 768px) {
+.pane-left table {
+    width: auto;
+    margin-right: 1rem;
+}
+.pane-right table {
+    margin-left: 1rem
+}
+@media (max-width: 1080px) { /* pane stuff collapsed */
+    .content {
+        height                      : 100%;
+        scroll-snap-type            : y proximity;
+        scroll-padding              : 40px;
+    }
     .pane-left {
-        width: 100%;
-        height: auto;
+        width                       : 100%;
+        height                      : auto;
     }
     /*.pane-left > table {
         width: 100%;
@@ -130,27 +175,44 @@
     }*/
     .pane-right {
         float                       : right;
-        width: 100%; /* Adjust width for smaller screens */
-        height: auto;
+        width                       : 100%; /* Adjust width for smaller screens */
+        height                      : auto;
+        overflow-y                  : hidden;
+        overflow-x                  : hidden;
+    }
+    .pane-left table {
+        width                       : 100%;
+        margin-right                : auto;
+    }
+    .pane-right table {
+        margin-left                 : auto;
+        width                       : 100%;
+    }
+    body {
         overflow-y                  : auto;
     }
 }
 /* for making nice grids */
 .grid-container {
-    display                     : grid;
-    gap                         : 32px;
-    grid-template-columns       : auto auto;
+    display                         : grid;
+    gap                             : 2rem;
+    grid-template-columns           : auto auto;
 }
 .grid-item {
-    height: 0px;
+    height                          : 0px;
 }
 /* elements */
 body {
     background-color            : var(--col-body-bg);
+    /*background-image:           url('/hamilton.jpg') ;*/
     /*background-image            : linear-gradient(to bottom, var(--white), var(--white), var(--white), var(--graylight));*/
     margin                      : 0px;
+    overflow-y                  : hidden; /* no scroll on body */
+    max-width                   : 1224px; /* narrows against ultrawides */
+    margin                      : auto; /* centers after narrow */
 }
 body, p, a, label, table, th, td {
+    line-height                 : 1.2rem;
     font-family                 : var(--font-regular);
     font-size                   : var(--size-text-regular);
     color                       : var(--col-text-regular);
@@ -160,12 +222,12 @@ a {
     font-weight                 : bold;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: var(--col-text-regular);
+    color                       : var(--col-text-regular);
 }
 /* inner element spacing */
 h1, h2, h3, h4, h5, h6, p, a, label {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top                  : 1rem;
+    margin-bottom               : 1rem;
 }
 
 em {
@@ -177,7 +239,8 @@ table {
     margin-right                : auto;
     margin-top                  : 40px;
     margin-bottom               : 40px;
-    width                     : 90%;
+    width                       : calc(100% - 8rem);
+    max-width                   : 46rem;
     border-radius               : var(--common-border-radius);
     overflow                    : hidden;
     padding                     : 0px;
@@ -189,16 +252,16 @@ table {
     scroll-snap-align           : start none;
 }
 td {
-    padding                     : 20px;
+    padding                     : 1.25rem;
 }
 th {
     background-color            : var(--col-window-title);
     text-align                  : center;
     font-weight                 : bolder;
-    padding                     : 10px;
+    padding                     : .5rem;
 }
 samp, code {
-    padding                     : 15px;
+    padding                     : 1rem;
     color                       : var(--col-text-code);
     background-color            : var(--col-inset-face);
     font-weight                 : bold;
@@ -211,8 +274,8 @@ hr {
     /*border:none;*/
  	width                       : 60%;
     height                      : 0px;
-    margin-top                  : 16px;
-    margin-bottom               : 16px;
+    margin-top                  : 1rem;
+    margin-bottom               : 1rem;
     border-top                  : 3px solid var(--graylight);
     border-bottom               : 0px;
     box-shadow                  : var(--gray) 0 -2px 0;
@@ -278,10 +341,9 @@ input::placeholder, textarea::placeholder {
     color                       : var(--col-text-placeholder);
     transform                   : translateY(0px) scale(1);
     transition                  : var(--transition-dark-mode), transform var(--transition-control);
-    
 }
 input:focus::placeholder, textarea:focus::placeholder {
-    transform                   : translateY(-15px) scale(0.7);
+    transform                   : translateY(-1rem) scale(0.7);
     transition                  : var(--transition-dark-mode), transform var(--transition-control);
 }
 /* nice tab focussing - needs work */
@@ -291,22 +353,23 @@ button:focus, input:focus, textarea:focus{
 }
 /* scrollbar */
 ::-webkit-scrollbar {
-    width                       : 30px;
+    width                       : 1.86rem;
 }
 ::-webkit-scrollbar-thumb {
-    background                  : var(--graylight); 
-    border-radius               : 25px;
-    box-shadow                  : var(--col-shadows) 0 -9px 0 inset; /*boxshadow-inner-deep ??? */
+    background                  : var(--col-window-face); 
+    border-radius               : var(--common-border-radius);
+    box-shadow                  : var(--col-window-edge) 0 -9px 0 inset; /*boxshadow-inner-deep ??? */
 }
 ::-webkit-scrollbar-thumb:hover {
     background                  : var(--gray); 
-}
+}   
  /* sliders */
 .switch {  /* slider container */
     position                    : relative;
     display                     : inline-block;
     width                       : calc((var(--slider-size) + var(--slider-buffer)) * 2);
     height                      : calc(var(--slider-buffer) * 2 + var(--slider-size));
+    margin:1rem;
 }
 .switch input { /* hide default junk - needs work */
     visibility                  : hidden;
@@ -314,6 +377,8 @@ button:focus, input:focus, textarea:focus{
     opacity                     : 0;
     width                       : calc((var(--slider-size) + var(--slider-buffer)) * 2);
     height                      : calc(var(--slider-buffer) * 2 + var(--slider-size));
+    margin-top                  : 0rem;
+    margin-bottom               : 0rem;
 }
 .slider { /* slider track */
     position                    : absolute;
@@ -363,4 +428,13 @@ input:checked + .slider:hover:before {
     -webkit-transform   : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
     -ms-transform       : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
     transform           : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
+}
+/* selection */
+::-moz-selection {
+    color                  : var(--col-body-bg);
+    background             : var(--col-text-regular);
+}
+::selection {
+    color                   : var(--col-body-bg);
+    background              : var(--col-text-regular);
 }
