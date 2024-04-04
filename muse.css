@@ -81,13 +81,13 @@
 }
 [data-theme="light"] table {
     /*box-shadow: var(--black) 0 2px 6px 0;*/
-    box-shadow: var(--gray) 2.5rem 1rem 0rem 0rem;
-    box-shadow: color-mix(in srgb, var(--gray), transparent 90%) .2rem .9rem 0rem 0rem;
-    box-shadow: color-mix(in srgb, var(--graydark), transparent 90%) 0 2px 19px 0;
+    box-shadow                  : var(--gray) 2.5rem 1rem 0rem 0rem;
+    box-shadow                  : color-mix(in srgb, var(--gray), transparent 90%) .2rem .9rem 0rem 0rem;
+    box-shadow                  : color-mix(in srgb, var(--graydark), transparent 90%) 0 2px 19px 0;
 }
 [data-theme="dark"] table {
     /*box-shadow: 0px 0px 0px 0px;*/
-    box-shadow: var(--graydark) 0rem 0rem 0rem 0rem;
+    box-shadow                  : var(--graydark) 0rem 0rem 0rem 0rem;
     /*box-shadow: color-mix(in srgb, var(--gray), transparent 90%) 0rem .7rem 0rem 0rem;*/
 }
 
@@ -110,29 +110,51 @@
 /* divs for nav screen */
 .navigation {
     height                      : 5rem;
-    vertical-align: middle;
+    /*debug*/
+    /* background-color: #A3BE8C; */
 }
+.navigation p, .navigation a, .navigation img {
+    font-size                   : 1rem;
+    float: left;;
+    height                      : 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.navigation a {
+    color                       : var(--white);
+    color                       : var(--purple);  /*var(--col-text-url)*/
+} 
 .nav-left {
-    float                       : left;
+    float                       : left; /*allows navlets to stack leftward*/
     padding-left                : 1rem;
-    height                      : 5rem;
-    line-height:                  5rem;
-    vertical-align              : middle;
-}
-.nav-left img {
-    height: 100%;
-    display:inline-block;
-    margin:auto;
+    height                      : 100%;
+    max-height                  : 5rem;
+    /*debug*/
+    /* background-color: #EBCB8B; */
+    /* center contents vertically */
+    overflow: visible;
+    display: flex;
+    align-items: center;
 }
 .nav-right {
-    float                       : right;
-    padding-right               : 1%;
+    float                       : right; /*allows navlets to stack rightward*/
+    padding-right               : 1rem;
     height                      : 100%;
+    max-height                  : 5rem;
+    /*debug*/
+    /* background-color: #EBCB8B; */
+    /* center contents vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* divs for splitting content screen */
 .content {
-    overflow-y                  : scroll;
+    /* pushes nav-divs to page edges, tucks scroll bar.
+    /*overflow-y                  : scroll;*/
 }
 .pane {
     height                      : 100%;
@@ -161,14 +183,19 @@
     margin-left: 1rem
 }
 @media (max-width: 1080px) { /* pane stuff collapsed */
+    body {
+        overflow-y: hidden;
+    }
     .content {
-        height                      : 100%;
-        scroll-snap-type            : y proximity;
-        scroll-padding              : 40px;
+        height                  : 100%;
+        scroll-snap-type        : y proximity;
+        scroll-padding          : 40px;
+        overflow-y                  : scroll;
+        width: 100%;
     }
     .pane-left {
-        width                       : 100%;
-        height                      : auto;
+        width                   : 100%;
+        height                  : auto;
     }
     /*.pane-left > table {
         width: 100%;
@@ -177,32 +204,32 @@
         font-size:100px;
     }*/
     .pane-right {
-        float                       : right;
-        width                       : 100%; /* Adjust width for smaller screens */
-        height                      : auto;
-        overflow-y                  : hidden;
-        overflow-x                  : hidden;
+        float                   : right;
+        width                   : 100%; /* Adjust width for smaller screens */
+        height                  : auto;
+        overflow-y              : hidden;
+        overflow-x              : hidden;
     }
     .pane-left table {
-        width                       : 100%;
-        margin-right                : auto;
+        width                   : 100%;
+        margin-right            : auto;
     }
     .pane-right table {
-        margin-left                 : auto;
-        width                       : 100%;
+        margin-left             : auto;
+        width                   : 100%;
     }
     body {
-        overflow-y                  : auto;
+        overflow-y              : auto;
     }
 }
 /* for making nice grids */
 .grid-container {
-    display                         : grid;
-    gap                             : 2rem;
-    grid-template-columns           : auto auto;
+    display                     : grid;
+    gap                         : 2rem;
+    grid-template-columns       : auto auto;
 }
 .grid-item {
-    height                          : 0px;
+    height                      : 0px;
 }
 /* elements */
 body {
@@ -263,7 +290,7 @@ th {
     font-weight                 : bolder;
     padding                     : .5rem;
 }
-samp, code {
+samp, code, pre {
     padding                     : 1rem;
     color                       : var(--col-text-code);
     background-color            : var(--col-inset-face);
@@ -365,7 +392,10 @@ button:focus, input:focus, textarea:focus{
 }
 ::-webkit-scrollbar-thumb:hover {
     background                  : var(--gray); 
-}   
+}
+::-webkit-scrollbar-track {
+    /* background                  : var(--pink); */
+}
  /* sliders */
 .switch {  /* slider container */
     position                    : relative;
@@ -417,27 +447,26 @@ input:checked + .slider { /* slider track while checked */
     box-shadow                  : var(--boxshadow-outer-tall); /*0px 10px 25px var(--graydark),*/
     transform                   : translateY(var(--height-focused-negative)) scale(1);
 }
-input:focus + .slider {
-    /*box-shadow                : 0 0 1px #2196F3;*/
-    /*box-shadow                : var(--col-shadows) 0 -4px 0;*/
-}
+/*input:focus + .slider {
+    box-shadow                : 0 0 1px #2196F3;
+    box-shadow                : var(--col-shadows) 0 -4px 0;
+}*/
 input:checked + .slider:before {
     -webkit-transform           : translateX(var(--slider-size)) translateY(var(--height-raised-negative));
     -ms-transform               : translateX(var(--slider-size)) translateY(var(--height-raised-negative));
     transform                   : translateX(var(--slider-size)) translateY(var(--height-raised-negative));
 }
-
 input:checked + .slider:hover:before {
-    -webkit-transform   : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
-    -ms-transform       : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
-    transform           : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
+    -webkit-transform           : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
+    -ms-transform               : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
+    transform                   : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
 }
 /* selection */
 ::-moz-selection {
-    color                  : var(--col-body-bg);
-    background             : var(--col-text-regular);
+    color                       : var(--col-body-bg);
+    background                  : var(--col-text-regular);
 }
 ::selection {
-    color                   : var(--col-body-bg);
-    background              : var(--col-text-regular);
+    color                       : var(--col-body-bg);
+    background                  : var(--col-text-regular);
 }
