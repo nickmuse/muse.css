@@ -3,15 +3,15 @@
     --font-regular              : "Montserrat", sans-serif;
     --font-monospace            : "Consolas", monospace;
     /* color palette */
-    --red                       :#BF616A;  
-    --orange                    :#D08770;  
-    --yellow                    :#EBCB8B;  
-    --green                     :#A3BE8C;  
-    --blue                      :#5E81AC;  
-    --purple                    :#B48EAD;  
-    --white                     :#f8f9fb;  
-    --gray                      :#b2b5bf;
-    --black                     :#282a36;  
+    --red                       :#BF616A;
+    --orange                    :#D08770;
+    --yellow                    :#EBCB8B;
+    --green                     :#A3BE8C;
+    --blue                      :#5E81AC;
+    --purple                    :#B48EAD;
+    --white                     :#f8f9fb;
+    --gray                      :#b2b5bf
+    --black                     :#282a36;
     --pink                      :#ff79c6;
     /*
     --graydark                  :#4C566A; 
@@ -156,17 +156,14 @@
     /* pushes nav-divs to page edges, tucks scroll bar.
     /*overflow-y                  : scroll;*/
 }
-.pane {
-    height                      : 100%;
-    margin                      : 0px;
-    padding                     : 0px
-}
 .pane-left              {
+    height                      : 100%;
     width                       : 30%;
     float                       : left;
     text-align                  : right;
 }
 .pane-right             {
+    height                      : 100%;
     width                       : 70%;
     float                       : right;
     text-align                  : left;
@@ -310,6 +307,21 @@ hr {
     border-bottom               : 0px;
     box-shadow                  : var(--gray) 0 -2px 0;
     border-radius               : 10px;
+}
+aside {
+    padding                     : 1rem;
+    border-radius               : var(--common-border-radius);
+    margin-top                  : 1rem;
+    margin-bottom               : 1rem;
+    display                     : inline-block;
+    overflow                    : hidden;
+    width                       : calc(100% - 4rem);
+    max-width                   : 46rem;
+    text-align                  : left;
+    vertical-align              : top;
+    box-sizing                  : border-box;
+    border-left                 : 2px solid var(--graylight);
+    border-color                : var(--col-text-regular);
 }
 /* controls */
 button, input, select {
