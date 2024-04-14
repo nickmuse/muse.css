@@ -13,7 +13,7 @@
     --pink        : #d95b9a;
     --white       : #f2f2f0;
     --graylight   : #ebe9f2;
-    --gray        : #9c98a4;
+    --gray        : #c7c2d1;
     --graydark    : #57546f;
     --black       : #23213d;
     /* sizes */
@@ -23,10 +23,10 @@
     --slider-size               : 2rem;
     --slider-buffer             : .3rem;
     /* 3d */
-    --height-depressed          : -.25rem;
+    --height-depressed          : -.20rem;
     --height-flat               : 0; 
-    --height-raised             : .25rem;
-    --height-focused            : .56rem;
+    --height-raised             : .20rem;
+    --height-focused            : .50rem;
     --height-raised-negative    : calc(-1*var(--height-raised));
     --height-focused-negative   : calc(-1*var(--height-focused));
     --boxshadow-inner-regular   : var(--col-window-edge) 0 var(--height-depressed) 0;
@@ -42,7 +42,7 @@
 [data-theme="light"] {
     --col-body-bg               : var(--white);
     --col-text-regular          : var(--black);
-    --col-text-url              : var(--green);
+    --col-text-url              : var(--black);
     --col-text-emphasis         : var(--red);
     --col-text-code             : var(--graydark);
     --col-text-placeholder      : var(--graylight);
@@ -60,7 +60,7 @@
 [data-theme="dark"] {
     --col-body-bg               : var(--black);
     --col-text-regular          : var(--white);
-    --col-text-url              : var(--green);
+    --col-text-url              : var(--white);
     --col-text-emphasis         : var(--red);
     --col-text-code             : var(--graylight);
     --col-text-placeholder      : var(--graydark);
@@ -110,7 +110,7 @@
     /* background-color: #A3BE8C; */
 }
 .navigation p, .navigation a, .navigation img {
-    font-size                   : 1rem;
+    font-size                   : 1.2rem;
     float: left;;
     height                      : 50%;
     display: flex;
@@ -249,9 +249,10 @@ body, p, a, label, table, th, td {
     font-size                   : var(--size-text-regular);
     color                       : var(--col-text-regular);
 }
-a {
+a, a:visited, a:hover, a:active {
     color                       : var(--col-text-url);
     font-weight                 : bold;
+    text-decoration             : none;
 }
 h1, h2, h3, h4, h5, h6 {
     color                       : var(--col-text-regular);
@@ -261,7 +262,6 @@ h1, h2, h3, h4, h5, h6, p, a, label {
     margin-top                  : 1rem;
     margin-bottom               : 1rem;
 }
-
 em {
     color                       : var(--col-text-emphasis);
     font-style                  : normal;
@@ -285,25 +285,37 @@ table {
 }
 th {
     background-color            : var(--col-window-title);
-    text-align                  : center;
+    text-align                  : left;
     font-weight                 : bolder;
+    font-size                   : 1.2rem;
     padding                     : .5rem;
+    color                       : var(--black);
 }
 td {
     padding                     : 1.25rem;
     overflow                    : hidden;   /* allows img-bg to work in here */
     position                    : relative; /* allows img-bg to work in here */
-    height                  : 200px;
+    height                      : 200px;    /* allows img-bg to work in here */
 }
 /* image background */
 .img-bg {
-    opacity         : 0.05;
+    opacity         : 0.15;
     position        : absolute;
     left            : 0;
     width           : 100%;
     top             : 0;
     height          : auto;
     object-fit      : contain;
+}
+.center-container {
+    width           : 100%;
+    align-items     : center;
+    display         : flex;
+    justify-content : center;
+}
+.centered-in-container img {
+    width           : 80%;
+    margin          : 40px;
 }
 samp, code, pre {
     padding                     : 1rem;
