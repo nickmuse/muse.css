@@ -42,7 +42,7 @@
 [data-theme="light"] {
     --col-body-bg               : var(--white);
     --col-text-regular          : var(--black);
-    --col-text-url              : var(--black);
+    --col-text-url              : var(--green);
     --col-text-emphasis         : var(--red);
     --col-text-code             : var(--graydark);
     --col-text-placeholder      : var(--graylight);
@@ -60,7 +60,7 @@
 [data-theme="dark"] {
     --col-body-bg               : var(--black);
     --col-text-regular          : var(--white);
-    --col-text-url              : var(--white);
+    --col-text-url              : var(--green);
     --col-text-emphasis         : var(--red);
     --col-text-code             : var(--graylight);
     --col-text-placeholder      : var(--graydark);
@@ -249,10 +249,13 @@ body, p, a, label, table, th, td {
     font-size                   : var(--size-text-regular);
     color                       : var(--col-text-regular);
 }
-a, a:visited, a:hover, a:active {
-    color                       : var(--col-text-url);
+a, a:visited, a:active {
+    color                       : var(--col-text-regular);
     font-weight                 : bold;
     text-decoration             : none;
+}
+a:hover {
+    color                       : var(--col-text-url);
 }
 h1, h2, h3, h4, h5, h6 {
     color                       : var(--col-text-regular);
