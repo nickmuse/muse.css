@@ -18,8 +18,8 @@
     --black       : #23213d;
     /* sizes */
     --common-border-radius      : .15rem;
-    --size-text-control         : 1rem;
-    --size-text-regular         : .8rem;
+    --size-text-control         : 1.1rem;
+    --size-text-regular         : 1.1rem;
     --slider-size               : 2rem;
     --slider-buffer             : .3rem;
     /* 3d */
@@ -244,7 +244,7 @@ body {
     margin                      : auto; /* centers after narrow */
 }
 body, p, a, label, table, th, td {
-    line-height                 : 1.2rem;
+    /*line-height                 : 1.2rem;*/
     font-family                 : var(--font-regular);
     font-size                   : var(--size-text-regular);
     color                       : var(--col-text-regular);
