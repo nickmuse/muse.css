@@ -310,16 +310,7 @@ td {
     height          : auto;
     object-fit      : contain;
 }
-.center-container {
-    width           : 100%;
-    align-items     : center;
-    display         : flex;
-    justify-content : center;
-}
-.centered-in-container img {
-    width           : 80%;
-    margin          : 40px;
-}
+
 samp, code, pre {
     padding                     : 1rem;
     color                       : var(--col-text-code);
