@@ -243,7 +243,7 @@ body {
     margin                      : auto; /* centers after narrow */
 }
 body, p, a, label, table, th, td {
-    /*line-height                 : 1.2rem;*/
+    line-height                 : 1.5rem;
     font-family                 : var(--font-regular);
     font-size                   : var(--size-text-regular);
     color                       : var(--col-text-regular);
