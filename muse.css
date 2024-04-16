@@ -54,8 +54,10 @@
     --col-button-enabled        : var(--white);
     --col-button-disabled       : var(--gray);
     --col-shadows               : var(--gray);
-    --col-slider-off            : var(--white);
+    --col-slider-off            : var(--gray);
     --col-slider-on             : var(--red);
+    --col-slider-face           : var(--graylight);
+    --col-slider-edge           : var(--graydark);
 }
 [data-theme="dark"] {
     --col-body-bg               : var(--black);
@@ -73,7 +75,9 @@
     --col-button-disabled       : var(--gray);
     --col-shadows               : var(--gray);
     --col-slider-off            : var(--graylight);
-    --col-slider-on             : var(--blue);
+    --col-slider-on             : var(--graydark);
+    --col-slider-face           : var(--gray);
+    --col-slider-edge           : var(--graydark);
 }
 [data-theme="light"] table {
     /*box-shadow: var(--black) 0 2px 6px 0;*/
@@ -426,9 +430,9 @@ button:focus, input:focus, textarea:focus{
     width                       : 1.86rem;
 }
 ::-webkit-scrollbar-thumb {
-    background                  : var(--col-window-face); 
+    background                  : var(--col-slider-face); 
     border-radius               : var(--common-border-radius);
-    box-shadow                  : var(--col-window-edge) 0 -9px 0 inset; /*boxshadow-inner-deep ??? */
+    box-shadow                  : var(--col-slider-edge) 0 -9px 0 inset; /*boxshadow-inner-deep ??? */
 }
 ::-webkit-scrollbar-thumb:hover {
     background                  : var(--gray); 
@@ -464,7 +468,7 @@ button:focus, input:focus, textarea:focus{
     -webkit-transition          : var(--transition-dark-mode), transform var(--transition-control);
     transition                  : var(--transition-dark-mode), transform var(--transition-control);
     border-radius               : var(--common-border-radius);
-    box-shadow                  : var(--boxshadow-inner-regular);
+    box-shadow                  : var(--col-slider-edge);
 }
 input:checked + .slider { /* slider track while checked */
     background-color            : var(--col-slider-on);
@@ -476,11 +480,11 @@ input:checked + .slider { /* slider track while checked */
     width                       : var(--slider-size);
     left                        : var(--slider-buffer);
     bottom                      : var(--slider-buffer);
-    background-color            : var(--col-window-face);
+    background-color            : var(--col-slider-face);
     -webkit-transition          : var(--transition-dark-mode), transform var(--transition-control), box-shadow var(--transition-control);
     transition                  : var(--transition-dark-mode), transform var(--transition-control), box-shadow var(--transition-control);
     border-radius               : var(--common-border-radius);
-    box-shadow                  : var(--boxshadow-outer-regular); /*0px 10px 25px var(--graydark),*/
+    box-shadow                  : var(--col-slider-edge); /*0px 10px 25px var(--graydark),*/
     transform                   : translateY(var(--height-raised-negative)) scale(1);
 }
 .slider:hover:before {
