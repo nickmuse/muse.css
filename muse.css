@@ -596,12 +596,32 @@ td {
     height                      : 0px;
 }
 
+/* TABS */
+.tab_links {
+    display                     : flex;
+    gap                         : 10px;
+}
+.tab_link {
+    flex                        : 1;
+}
+.tab_link.active {
+    background-color            : var(--green);
+    color                       : var(--white)
+}
+.tab_content {
+    display                     : none;
+    /*padding                     : 10px;*/
+    border-top                  : 2px solid var(--green);
+}
+
 /* POPUP BOXES */
 .popup {
     margin-left                 : auto;
     margin-right                : auto;
+    /*
     margin-top                  : 6rem;
     margin-bottom               : 6rem;
+    */
     width                       : fit-content;
     border-radius               : var(--common-border-radius);
     overflow                    : hidden;

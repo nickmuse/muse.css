@@ -9,13 +9,10 @@
     <body class="theme animate__bounceIn">
         <div class="navigation">
             <div class="nav-left"><p style="color:var(--green);font-weight:bolder;">muse.css</p></div>
-            <div class="nav-left"><a href="inside.html">link</a></div>
-            <div class="nav-left"><a href="inside.html">link</a></div>
-            <div class="nav-left"><a href="inside.html">link</a></div>
-            <div class="nav-left"><a href="inside.html">link</a></div>
-            <div class="nav-left"><a href="inside.html">link</a></div>
+            <div class="nav-left"><a href="demo.html">link</a></div>
+            <div class="nav-left"><a href="demo.html">link</a></div>
+            <div class="nav-left"><a href="demo.html">link</a></div>
             <div class="nav-right"><label class="switch"><input name="toggle_dark" type="checkbox"><span class="slider"></span></label></div>
-
         </div>
         <div class="page-content">
             <div class="page">
@@ -24,57 +21,74 @@
                     <h1>a small study on type + ux</h1>
                     <!-- image -->
                     <img class="article-media" src="hamilton.jpg" class="thumbnail"></img>
-                    <!-- code -->
-                    <h2>code</h2>
-                    <code> ~ $ git clone https://github.com/muse/muse.css █</code>
+
                     <!-- desc -->
                     <h2>forever a work in progress</h2>
                     <p><b>muse.css</b> was both written for fun, and to serve as a standard stylesheet for my own most common use cases and personal branding.</p>
-                    <!-- table -->
-                    <h2>table</h2>
-                    <p>it includes styling for controls, and plays nicely with grid.js</p>
-                    <!-- grid.js -->
-                    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
-                    <div id="table-container"></div>
-                    <script>
-                      new gridjs.Grid({
-                        columns: ['Team', 'Est.', 'W', 'L', 'Rate'],
-                        data: [
-                        ['Team Frank',2012,7,1,0.714],
-                            ['Poospatuck Smokes',2012,5,8,0.384],
-                            ['Shirley Estate Mothmen',2015,5,7,0.416],
-                            ['Smith Point Captains',2016,2,4,.333],
-                            ['Osprey Park',2018,0,1,0],
-                            ['Neighborhood Roadies',2019,2,5,0.285],
-                            ['Biltmore Drivers',2020,5,2,0.714],
-                        ],
-                        search: true,
-                        sort: true,
-                        pagination: {limit:100,summary:false,buttonsCount:0,}
-                      }).render(document.getElementById("table-container"));
-                    </script>
-                    <!-- login -->
-                    <div class="popup">
-                        <div class="popup-titlebar">Login</div>
-                        <div class="popup-content">
-                                <center>
-                                    <input type="text" placeholder="username"></input><br>
-                                    <input type="password" placeholder="password"></input><br>
-                                    <button>login</button><button>reset</button>
-                                </center>
+                    <!-- tabs -->
+                    <h2>tab-based navigation</h2>
+                    <div class="tab_links">
+                        <button class="tab_link" onclick="openTab(event,'tab_a')">tables</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_b')">prompts</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_c')">code</button>
+                    </div>
+                    <div class="tab_content" id="tab_a">
+                        <!-- table -->
+                        <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+                        <h2>tables</h2>
+                        <p>plays nicely with grid.js:</p>
+                        <div id="table-container"></div>
+                        <script>
+                          new gridjs.Grid({
+                            columns: ['Team', 'Est.', 'W', 'L', 'Rate'],
+                            data: [
+                                ['Frank',2012,7,1,0.714],
+                                ['Smokes',2012,5,8,0.384],
+                                ['Mothmen',2015,5,7,0.416],
+                                ['Captains',2016,2,4,.333],
+                                ['Ospreys',2018,0,1,0],
+                                ['Roadies',2019,2,5,0.285],
+                                ['Drivers',2020,5,2,0.714],
+                            ],
+                            search: true,
+                            sort: true,
+                            pagination: {limit:100,summary:false,buttonsCount:0,}
+                          }).render(document.getElementById("table-container"));
+                        </script>
+                    </div>
+                    <div class="tab_content" id="tab_b">
+                        <!-- login -->
+                        <h2>prompts</h2>
+                        <p>styling for common controls:</p>
+                        <div class="popup">
+                            <div class="popup-titlebar">Login</div>
+                            <div class="popup-content">
+                                    <center>
+                                        <input type="text" placeholder="username"></input><br>
+                                        <input type="password" placeholder="password"></input><br>
+                                        <button>login</button><button>reset</button>
+                                    </center>
+                            </div>
                         </div>
                     </div>
+                    <div class="tab_content" id="tab_c">
+                        <!-- code -->
+                        <h2>code</h2>
+                        <p>available on github:</p>
+                        <code> ~ $ git clone https://github.com/muse/muse.css █</code>
+                    </div>
+                    <!-- brand -->
+                     <br><br><br>
                     <center><p>developed by <a href="https://nickmuse.com">nickmuse.com</a></p></center>
+
                 </div>
+
+
+
             </div>
             
         </div>
         <script type="text/javascript" src="toggle_dark.js"></script>
-
-
-
-        
-
-
+        <script type="text/javascript" src="tabs.js"></script>
     </body>
 </html>
