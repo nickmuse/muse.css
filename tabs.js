@@ -6,7 +6,6 @@ function openTab(evt, contentId) {
     var _tablinks = document.getElementsByClassName("tab_link");
     for (var i = 0; i < _tablinks.length; i++) {
       _tablinks[i].className = _tablinks[i].className.replace(" active", "");
-      _tablinks[i].className = _tablinks[i].className.replace(" active", "");
     }
     document.getElementById(contentId).style.display = "block";
     evt.currentTarget.className += " active";
