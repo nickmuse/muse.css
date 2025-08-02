@@ -6,62 +6,66 @@
         <link rel="stylesheet" href="muse.css">
         <link rel="stylesheet" href="bounce.css">
     </head>
-    <body class="theme animate__bounceIn">
+    <body class="theme">
+        <!--
+        ##############################################################################
+        NAVIGATION
+        ##############################################################################
+        -->
         <div class="navigation">
             <div class="nav-left"><p style="color:var(--green);font-weight:bolder;">muse.css</p></div>
+            <!--
             <div class="nav-left"><a href="demo.html">link</a></div>
             <div class="nav-left"><a href="demo.html">link</a></div>
             <div class="nav-left"><a href="demo.html">link</a></div>
+            -->
             <div class="nav-right"><label class="switch"><input name="toggle_dark" type="checkbox"><span class="slider"></span></label></div>
         </div>
+        <!--
+        ##############################################################################
+        CONTENT
+        ##############################################################################
+        -->
         <div class="page-content">
             <div class="page">
                 <div class="article">
-                    <!-- title-->
-                    <h1>a small study on type + ux</h1>
-                    <!-- image -->
-                    <img class="article-media" src="hamilton.jpg" class="thumbnail"></img>
-
-                    <!-- desc -->
-                    <h2>forever a work in progress</h2>
-                    <p><b>muse.css</b> was both written for fun, and to serve as a standard stylesheet for my own most common use cases and personal branding.</p>
-                    <!-- tabs -->
-                    <h2>tab-based navigation</h2>
+                    
+                    <!--
+                    ##############################################################################
+                    TAB BUTTON NAVIGATION
+                    ##############################################################################
+                    -->
                     <div class="tab_links">
-                        <button class="tab_link" onclick="openTab(event,'tab_a')">tables</button>
-                        <button class="tab_link" onclick="openTab(event,'tab_b')">prompts</button>
-                        <button class="tab_link" onclick="openTab(event,'tab_c')">code</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_a')">¿&nbsp;?</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_b')">{&nbsp;...&nbsp;}</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_c')">[&nbsp;-&nbsp;|&nbsp;-&nbsp;]</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_d')">&lt;&nbsp;/&nbsp;&gt;</button>
+
                     </div>
+                    <!--
+                    ##############################################################################
+                    // TAB A
+                    ##############################################################################
+                    -->
                     <div class="tab_content" id="tab_a">
-                        <!-- table -->
-                        <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
-                        <h2>tables</h2>
-                        <p>plays nicely with grid.js:</p>
-                        <div id="table-container"></div>
-                        <script>
-                          new gridjs.Grid({
-                            columns: ['Team', 'Est.', 'W', 'L', 'Rate'],
-                            data: [
-                                ['Frank',2012,7,1,0.714],
-                                ['Smokes',2012,5,8,0.384],
-                                ['Mothmen',2015,5,7,0.416],
-                                ['Captains',2016,2,4,.333],
-                                ['Ospreys',2018,0,1,0],
-                                ['Roadies',2019,2,5,0.285],
-                                ['Drivers',2020,5,2,0.714],
-                            ],
-                            search: true,
-                            sort: true,
-                            pagination: {limit:100,summary:false,buttonsCount:0,}
-                          }).render(document.getElementById("table-container"));
-                        </script>
+                        <!-- title-->
+                        <h1>a small study on type + ux</h1>
+                        <!-- image -->
+                        <img class="article-media" src="hamilton.jpg" class="thumbnail"></img>
+                        <!-- desc -->
+                        <h2>this is a splat page</h2>
+                        <p><b>muse.css</b> is an ever-iterating implementation of what i actually use</p>
                     </div>
+                    <!--
+                    ###############################################################################
+                    TAB B
+                    ###############################################################################
+                    -->
                     <div class="tab_content" id="tab_b">
                         <!-- login -->
-                        <h2>prompts</h2>
-                        <p>styling for common controls:</p>
+                        <h1>stylings for common controls</h1>
                         <div class="popup">
-                            <div class="popup-titlebar">Login</div>
+                            <div class="popup-titlebar">Authenticate</div>
                             <div class="popup-content">
                                     <center>
                                         <input type="text" placeholder="username"></input><br>
@@ -71,22 +75,51 @@
                             </div>
                         </div>
                     </div>
+<!--
+                    ##############################################################################
+                    TAB C
+                    ##############################################################################
+                    -->
                     <div class="tab_content" id="tab_c">
+                        <!-- table -->
+                        <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+                        <h1>seems to play nicely with grid.js</h1>
+                        <div id="my-cool-table"></div>
+                        <script>
+                          new gridjs.Grid({
+                            columns: ['IP', 'MAC', 'Name'],
+                            data: [
+                                ['172.16.0.1','AABBCCDDEEFF','New York'],
+                                ['172.16.0.2','BBCCDDEEFF00','Copan'],
+                                ['192.168.0.1','CCDDEEFF0011','Casablanca'],
+                                ['192.168.0.2','DDEEFF001122','Dublin'],
+                                ['10.0.0.1','EEFF00112233','Palermo'],
+                                ['10.0.0.2','FF0011223344','Vienna'],
+                                ['10.0.0.3','FF0011223344','Osaka']
+                            ],
+                            search: true,
+                            sort: true,
+                            pagination: {limit:100,summary:false,buttonsCount:0,}
+                          }).render(document.getElementById("my-cool-table"));
+                        </script>
+                    </div>
+                    <!--
+                    ###############################################################################
+                    TAB D
+                    ###############################################################################
+                    -->
+                    <div class="tab_content" id="tab_d">
                         <!-- code -->
                         <h2>code</h2>
-                        <p>available on github:</p>
                         <code> ~ $ git clone https://github.com/muse/muse.css █</code>
                     </div>
-                    <!-- brand -->
+                    <!--
+                    BRAND
+                    -->
                      <br><br><br>
-                    <center><p>developed by <a href="https://nickmuse.com">nickmuse.com</a></p></center>
-
+                    <center><p>by <a href="https://nickmuse.com">nickmuse.com</a></p></center>
                 </div>
-
-
-
             </div>
-            
         </div>
         <script type="text/javascript" src="toggle_dark.js"></script>
         <script type="text/javascript" src="tabs.js"></script>

@@ -20,9 +20,11 @@
     --black       : #23213d;
     
     /* fonts */
-    --font-name-navigation      : "Montserrat", sans-serif;
-    --font-name-header          : "Montserrat", sans-serif;
-    --font-name-paragraph       : "Montserrat", sans-serif;
+    --font-one                  : "Montserrat", sans-serif;/*"Helvetica Neue", Helvetica, sans-serif;*/
+    --font-name-navigation      : var(--font-one);
+    --font-name-header          : var(--font-one);
+    --font-name-paragraph       : var(--font-one);
+    --font-text-input           : var(--font-one);
     --font-name-monospace       : "Consolas", monospace;
     --font-size-navigation      : 1.3rem;/*1.4*/
     --font-size-h1              : 5rem;
@@ -31,8 +33,8 @@
     --font-weight-h1            : 600;
     --font-weight-h2            : 300;
     --font-weight-paragraph     : 300;
-    font-size       : var(--font-size-paragraph);
-    font-weight     : 300;
+    font-size                   : var(--font-size-paragraph);
+    font-weight                 : 300;
     /* misc sizes */
     --common-border-radius      : .15rem;
     --slider-size               : 2rem;
@@ -329,7 +331,7 @@ button:active {
 input, textarea {
     color                       : var(--col-text-regular);
     background-color            : var(--col-inset-face);
-    font-family                 : "Montserrat", sans-serif;
+    font-family                 : var(--font-text-input);
     font-size                   : var(--font-size-control);
     box-shadow                  : var(--boxshadow-inner-regular);
 }
