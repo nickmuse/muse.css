@@ -297,7 +297,7 @@ button, input, select {
     align-items                 : center;
     font-size                   : var(--font-size-control);
     font-weight                 : bold;
-    font-family                 : var(--font-name-paragraph)
+    font-family                 : var(--font-name-paragraph);
     white-space                 : nowrap;
     &:disabled {
         opacity                 : 1;
