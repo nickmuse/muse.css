@@ -224,7 +224,11 @@ h4 {
     line-height: 20px;
 }
 */
-ul li::marker {
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+ul li::before {
   content: "~ ";
   font-family: var(--font-name-monospace);
   color: var(--col-text-emphasis);
