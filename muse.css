@@ -1,8 +1,3 @@
-@font-face {
-    font-family : 'mobtype';
-    src         : url('/assets/fonts/mobtype.woff2') format('woff2');
-}
-
 :root {
     /* color palette */
     --red         : #bd515a;
