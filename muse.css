@@ -240,6 +240,7 @@ em {
     font-style                  : normal;
 }
 samp, code, pre, .tag-list {
+    margin                      : 1rem;
     padding                     : 1rem;
     color                       : var(--col-text-code);
     background-color            : var(--col-inset-face);
@@ -548,7 +549,6 @@ td {
 }
 .nav-left {
     float                       : left; /*allows navlets to stack leftward*/
-    padding-left                : 1rem;
     height                      : 100%;
     max-height                  : 5rem;
     overflow: visible;
@@ -557,7 +557,6 @@ td {
 }
 .nav-right {
     float                       : right; /*allows navlets to stack rightward*/
-    padding-right               : .5rem;
     height                      : 100%;
     max-height                  : 5rem;
     display: flex;
