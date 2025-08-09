@@ -446,6 +446,15 @@ input:checked + .slider:hover:before {
 /*                                                            */
 /**************************************************************/
 
+.blinking {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 60% { opacity: 1; }
+  60.01%, 100% { opacity: 0; }
+}
+
 /* animations */
 @keyframes arrive {
     from { transform            : scale(0.5) translateY(00px) rotate(000deg); opacity: 0; }
