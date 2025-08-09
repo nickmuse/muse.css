@@ -20,7 +20,7 @@
     --black       : #23213d;
     
     /* fonts */
-    --font-one                  : "Montserrat", sans-serif;/*"Helvetica Neue", Helvetica, sans-serif;*/
+    --font-one                  : "Montserrat", sans-serif;
     --font-name-navigation      : var(--font-one);
     --font-name-header          : var(--font-one);
     --font-name-paragraph       : var(--font-one);
