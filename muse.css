@@ -228,6 +228,12 @@ h4 {
     line-height: 20px;
 }
 */
+ul li::marker {
+  content: "~ ";
+  font-family: var(--font-name-monospace);
+  color: var(--col-text-emphasis);
+  font-weight: bold;
+}
 em {
     color                       : var(--col-text-emphasis);
     font-style                  : normal;
