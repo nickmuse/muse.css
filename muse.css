@@ -140,7 +140,13 @@ th, h1, h2, h3, h4, h5, h6 {
     font-family                 : var(--font-name-header);
     color                       : var(--col-text-regular);
 }
-a                               {color:var(--col-text-regular);text-decoration:underline;} /* should maybe just target like "<p> in <a>" */
+a { /* should maybe just target like "<p> in <a>" */
+    color                       : var(--col-text-regular);
+    text-decoration             : underline solid;
+    text-decoration-color       : var(--col-text-url);
+    text-underline-offset       : 0.25rem;
+    text-decoration-thickness   : .15rem;
+}
 a:visited                       {color:var(--col-text-regular);text-decoration:underline;}
 a:active                        {color:var(--col-text-regular);text-decoration:underline;}
 a:hover                         {color:var(--col-text-url);    text-decoration:underline;}
