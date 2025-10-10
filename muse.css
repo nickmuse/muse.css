@@ -565,6 +565,8 @@ td {
     display                     : flex;
     align-items                 : center;
     justify-content             : center;
+    max-height                  : var(--nav-size);
+    object-fit                  : contain;
 }
 .nav-left,
 .nav-right {
