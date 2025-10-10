@@ -536,10 +536,6 @@ td {
 /**************************************************************/
 
 /* MAIN LAYOUT */
-.navigation a {
-    text-decoration             : none;
-    font-weight                 : initial;
-}
 .navigation {
     display                     : flex;
     justify-content             : space-between;
@@ -547,6 +543,12 @@ td {
     height                      : var(--nav-size);
     margin                      : auto;
     max-width                   : var(--body-width);
+    font-family                 : var(--font-name-navigation);
+    font-size                   : var(--font-size-navigation);
+}
+.navigation a {
+    text-decoration             : none;
+    font-weight                 : initial;
 }
 .navigation-fixed { /* add after navigation if you want the nav bar fixed */
     position                    : fixed;
@@ -559,24 +561,21 @@ td {
 .navigation-fixed + * { /* for whatever comes after nav, bumps it down to allow scroll below bar if it is not fixed */
     padding-top                 : var(--nav-size);
 }
-.navigation p,
-.navigation a,
-.navigation img {
-    font-family                 : var(--font-name-navigation);
-    font-size                   : var(--font-size-navigation);
-    display                     : flex;
-    align-items                 : center;
-    justify-content             : center;
-    max-height                  : var(--nav-size);
-    object-fit                  : contain;
-}
 .nav-left,
 .nav-right {
-    height                      : 100%;
-    max-height                  : var(--nav-size);
+    height                      : var(--nav-size);
     overflow                    : visible;
     display                     : flex;
     align-items                 : center;
+}
+.nav-left > *, /* child elements */
+.nav-right > * {
+    max-height: calc(100% - 1rem);
+    width: auto;
+    object-fit: contain;
+    display: block;
+    font-family                 : var(--font-name-navigation);
+    font-size                   : var(--font-size-navigation);
 }
 /* divs for single narrow reading pane */
 .page-container {
