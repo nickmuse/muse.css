@@ -19,7 +19,7 @@
     --font-name-navigation      : var(--font-one);
     --font-name-header          : var(--font-one);
     --font-name-paragraph       : var(--font-one);
-    --font-text-input           : var(--font-one);
+    --font-name-input           : var(--font-one);
     --font-name-monospace       : "Consolas", monospace;
     --font-size-navigation      : 1.3rem;/*1.4*/
     --font-size-h1              : 5rem;
@@ -346,7 +346,7 @@ button:active {
 input, textarea {
     color                       : var(--col-text-regular);
     background-color            : var(--col-inset-face);
-    font-family                 : var(--font-text-input);
+    font-family                 : var(--font-name-input);
     font-size                   : var(--font-size-control);
     box-shadow                  : var(--boxshadow-inner-regular);
 }
