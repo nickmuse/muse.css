@@ -561,8 +561,12 @@ td {
 .navigation-fixed + * { /* for whatever comes after nav, bumps it down to allow scroll below bar if it is not fixed */
     padding-top                 : var(--nav-size);
 }
-.nav-left,
+.nav-left {
+    padding-left                : 2rem;
+}
 .nav-right {
+    padding-right               : 2rem;
+}
     height                      : var(--nav-size);
     overflow                    : visible;
     display                     : flex;
