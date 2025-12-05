@@ -59,8 +59,8 @@
 /**************************************************************/
 
 html[data-theme="light"] .theme {
-    --col-body-bg               : var(--white);
-    --col-body-bg-next          : var(--graylight);
+    --col-body-bg               : var(--graylight);
+    --col-body-bg-next          : var(--white);
     --col-text-regular          : var(--black);
     --col-text-url              : var(--green);
     --col-text-emphasis         : var(--red);
