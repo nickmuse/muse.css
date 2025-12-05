@@ -68,7 +68,7 @@ html[data-theme="light"] .theme {
     --col-text-placeholder      : var(--gray);
     --col-window-title          : var(--green);
     --col-window-edge           : var(--black);
-    --col-inset-face            : var(--graylight);
+    --col-inset-face            : var(--white);
     --col-control-text          : var(--black);
     --col-button-enabled        : var(--gray);
     --col-button-disabled       : var(--white);
