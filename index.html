@@ -13,10 +13,12 @@
         -->
         <div class="navigation">
             <div class="nav-left">
-                <a href="https://nickmuse.com"><code>&nbsp;../&nbsp;</code></a>
+                <a href="https://nickmuse.com"><code>muse.css</code></a>
             </div>
             <div class="nav-right">
+                <p>☀︎</p>
                 <label class="switch"><input name="toggle_dark" type="checkbox"><span class="slider"></span></label>
+                <p>🌙︎</p>
             </div>
         </div>
         <!--
@@ -34,10 +36,10 @@
                     ##############################################################################
                     -->
                     <div class="tab_links">
-                        <button class="tab_link" onclick="openTab(event,'tab_a')">¿&nbsp;?</button>
-                        <button class="tab_link" onclick="openTab(event,'tab_b')">{&nbsp;...&nbsp;}</button>
-                        <button class="tab_link" onclick="openTab(event,'tab_c')">—&nbsp;|&nbsp;—</button>
-                        <button class="tab_link" onclick="openTab(event,'tab_d')">&lt;&nbsp;/&nbsp;&gt;</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_a')">🏁︎</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_b')">📡︎</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_c')">⛏︎</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_d')">🌿︎</button>
                     </div>
                     <!--
                     ##############################################################################
@@ -46,11 +48,9 @@
                     -->
                     <div class="tab_content" id="tab_a">
                         <!-- title-->
-                        <h1>a small study on type + ux <span class="blinking">█</span></h1>
+                        <h1>example <span class="blinking">█</span></h1>
                         <!-- image -->
                         <img class="article-media" src="hamilton.jpg" class="thumbnail"></img>
-                        <!-- desc -->
-                        <p>muse.css is an ever-iterating implementation of what i actually use</p>
                     </div>
                     <!--
                     ###############################################################################
@@ -59,19 +59,21 @@
                     -->
                     <div class="tab_content" id="tab_b">
                         <!-- login -->
-                        <h1>stylings for common controls <span class="blinking">█</span></h1>
+                        <h1>stylings for common elements <span class="blinking">█</span></h1>
                         <div class="popup">
-                            <div class="popup-titlebar">Authenticate</div>
+                            <div class="popup-titlebar">&#128274;&#xFE0E;&nbsp;access</div>
                             <div class="popup-content">
                                     <center>
                                         <input type="text" placeholder="username"></input><br>
                                         <input type="password" placeholder="password"></input><br>
-                                        <button>login</button><button>reset</button>
+                                        <button>login</button>
+                                        <button disabled>logout</button>
+                                        <label class="switch"><input name="nonsense" type="checkbox"><span class="slider"></span></label>
                                     </center>
                             </div>
                         </div>
                     </div>
-<!--
+                    <!--
                     ##############################################################################
                     TAB C
                     ##############################################################################
@@ -80,22 +82,24 @@
                         <!-- table -->
                         <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
                         <h1>plays nicely with grid.js <span class="blinking">█</span></h1>
-                        <div id="my-cool-table"></div>
+                        <div id="my-cool-table" style="width: 100%;"></div>
                         <script>
                           new gridjs.Grid({
-                            columns: ['IP', 'MAC', 'Name'],
+                            columns: ['Server', 'Region'],
                             data: [
-                                ['172.16.0.1','AABBCCDDEEFF','New York'],
-                                ['172.16.0.2','BBCCDDEEFF00','Copan'],
-                                ['192.168.0.1','CCDDEEFF0011','Casablanca'],
-                                ['192.168.0.2','DDEEFF001122','Dublin'],
-                                ['10.0.0.1','EEFF00112233','Palermo'],
-                                ['10.0.0.2','FF0011223344','Vienna'],
-                                ['10.0.0.3','FF0011223344','Osaka']
+                                ['172.16.0.1','North'],
+                                ['172.16.0.2','North East'],
+                                ['192.168.0.1','East'],
+                                ['192.168.0.2','South East'],
+                                ['10.0.0.1','South'],
+                                ['10.0.0.2','South West'],
+                                ['10.0.0.3','West'],
+                                ['10.0.0.4','North West']
                             ],
                             search: true,
                             sort: true,
-                            pagination: {limit:100,summary:false,buttonsCount:0,}
+                            pagination: {limit:6,summary:false,buttonsCount:0,},
+                            width: '100%',
                           }).render(document.getElementById("my-cool-table"));
                         </script>
                     </div>
