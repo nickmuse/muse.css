@@ -528,6 +528,12 @@ td {
    min-width                    : 0;
    font-size                    : .8em;
 }
+.gridjs-table {
+    width: auto;
+    table-layout: auto;
+    box-sizing: border-box;
+}
+
 
 /**************************************************************/
 /*                                                            */
@@ -645,9 +651,10 @@ td {
     color                       : var(--col-text-regular)
 }
 .tab_content {
-    display                     : none;
-    /*padding                     : 10px;*/
     border-top                  : 2px solid var(--col-body-bg-next);
+    width                       : 100%;
+    max-width                   : 100%;
+    overflow-x                  : visible;
 }
 
 /* POPUP BOXES */
