@@ -9,7 +9,7 @@
     --purple      : #9e4491;
     --pink        : #d95b9a;
     --white       : #f2f2f0;
-    --graylight   : #bbc5e1;
+    --graylight   : #d9d9d9;
     --gray        : #737089;
     --graydark    : #3d3a56;
     --black       : #23213d;
@@ -70,15 +70,15 @@ html[data-theme="light"] .theme {
     --col-window-edge           : var(--black);
     --col-inset-face            : var(--white);
     --col-control-text          : var(--black);
-    --col-button-enabled        : var(--gray);
-    --col-button-disabled       : var(--white);
+    --col-button-enabled        : var(--white);
+    --col-button-disabled       : var(--graylight);
     --col-shadows               : var(--gray);
     --col-slider-off            : var(--gray);
-    --col-slider-on             : var(--red);
-    --col-slider-face           : var(--graylight);
+    --col-slider-on             : var(--gray);
+    --col-slider-face           : var(--white);
     --col-slider-edge           : var(--graydark);
-    --col-table-row-odd         : var(--graylight);
-    --col-table-row-even        : var(--gray);
+    --col-table-row-odd         : var(--white);
+    --col-table-row-even        : var(--graylight);
 }
 html[data-theme="dark"] .theme {
     --col-body-bg               : var(--black);
@@ -95,9 +95,9 @@ html[data-theme="dark"] .theme {
     --col-button-enabled        : var(--graydark);
     --col-button-disabled       : var(--black);
     --col-shadows               : var(--gray);
-    --col-slider-off            : var(--graylight);
-    --col-slider-on             : var(--graydark);
-    --col-slider-face           : var(--gray);
+    --col-slider-off            : var(--gray);
+    --col-slider-on             : var(--gray);
+    --col-slider-face           : var(--graydark);
     --col-slider-edge           : var(--black);
     --col-table-row-odd         : var(--graydark);
     --col-table-row-even        : var(--black);
@@ -371,7 +371,7 @@ button:focus, input:focus, textarea:focus{
 ::-webkit-scrollbar-thumb {
     background                  : var(--col-slider-face); 
     border-radius               : var(--common-border-radius);
-    box-shadow                  : var(--col-slider-edge) 0 -9px 0 inset; /*boxshadow-inner-deep ??? */
+    /*box-shadow                  : var(--col-slider-edge) 0 -9px 0 inset; /*boxshadow-inner-deep ??? */
 }
 ::-webkit-scrollbar-thumb:hover {
     background                  : var(--gray); 
@@ -502,7 +502,7 @@ tbody tr:nth-child(even) {
     background-color            : var(--col-table-row-even);
 }
 thead {
-    background-color            : var(--green);
+    background-color            : var(--col-window-title);
 }
 th {
     color                       : var(--col-text-regular);
@@ -638,15 +638,16 @@ td {
 }
 .tab_link {
     flex                        : 1;
+    color                       : var(--gray)
 }
 .tab_link.active {
-    background-color            : var(--green);
-    color                       : var(--white)
+    background-color            : var(--col-window-title);
+    color                       : var(--col-text-regular)
 }
 .tab_content {
     display                     : none;
     /*padding                     : 10px;*/
-    border-top                  : 2px solid var(--green);
+    border-top                  : 2px solid var(--col-body-bg-next);
 }
 
 /* POPUP BOXES */
