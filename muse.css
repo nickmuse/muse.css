@@ -38,16 +38,16 @@
     --nav-size                  : 5rem;
     --body-width                : 1224px;
     /* 3d */
-    --height-depressed          : -.10rem;
-    --height-flat               : 0; 
-    --height-raised             : .10rem;
-    --height-focused            : .25rem;
-    --height-raised-negative    : calc(-1*var(--height-raised));
-    --height-focused-negative   : calc(-1*var(--height-focused));
-    --boxshadow-inner-regular   : var(--col-window-edge) 0 var(--height-depressed) 0;
-    --boxshadow-outer-regular   : var(--col-window-edge) 0 var(--height-raised) 0;
-    --boxshadow-outer-tall      : var(--col-window-edge) 0 var(--height-focused) 0;
-    --boxshadow-flush           : var(--col-window-edge) 0 var(--height-flat) 0;
+    --control-lift-rest         : 0;
+    --control-lift-emphasize   : calc(-1*var(--shadow-offset-focused));
+    --shadow-offset-depressed   : -.10rem;
+    --shadow-offset-flat        : 0; 
+    --shadow-offset-raised      : .10rem;
+    --shadow-offset-focused     : .25rem;
+    --boxshadow-inner-regular   : var(--col-window-edge) 0 var(--shadow-offset-depressed) 0;
+    --boxshadow-outer-regular   : var(--col-window-edge) 0 var(--shadow-offset-raised) 0;
+    --boxshadow-outer-tall      : var(--col-window-edge) 0 var(--shadow-offset-focused) 0;
+    --boxshadow-flush           : var(--col-window-edge) 0 var(--shadow-offset-flat) 0;
     /* transitions */
     --transition-dark-mode      : .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);/*color 2s ease-in-out, background-color 2s ease-in-out;*/
     --transition-control        : .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -327,7 +327,7 @@ button {
     background-color            : var(--col-button-enabled);
     transition                  : var(--transition-dark-mode), box-shadow var(--transition-control), transform var(--transition-control);
     touch-action                : manipulation;
-    transform                   : translateY(var(--height-raised-negative)) scale(1);
+    transform                   : translateY(var(--control-lift-rest)) scale(1);
     box-shadow                  : var(--boxshadow-outer-regular);/*0px 5px 10px var(--button-shadow), */
     &:disabled {
         color                   : var(--col-text-placeholder);
@@ -336,7 +336,7 @@ button {
 }
 button:hover {
     box-shadow                  : var(--boxshadow-outer-tall); /*0px 20px 25px var(--button-shadow),*/
-    transform                   : translateY(var(--height-focused-negative)) scale(1);
+    transform                   : translateY(var(--control-lift-emphasize)) scale(1);
 }
 button:active {
     box-shadow                  : var(--boxshadow-flush); /*0px 5px 25px var(--button-shadow), */
@@ -425,25 +425,25 @@ input:checked + .slider { /* slider track while checked */
     transition                  : var(--transition-dark-mode), transform var(--transition-control), box-shadow var(--transition-control);
     border-radius               : var(--common-border-radius);
     box-shadow                  : var(--col-slider-edge); /*0px 10px 25px var(--graydark),*/
-    transform                   : translateY(var(--height-raised-negative)) scale(1);
+    transform                   : translateY(var(--control-lift-rest)) scale(1);
 }
 .slider:hover:before {
     box-shadow                  : var(--boxshadow-outer-tall); /*0px 10px 25px var(--graydark),*/
-    transform                   : translateY(var(--height-focused-negative)) scale(1);
+    transform                   : translateY(var(--control-lift-emphasize)) scale(1);
 }
 /*input:focus + .slider {
     box-shadow                : 0 0 1px #2196F3;
     box-shadow                : var(--col-shadows) 0 -4px 0;
 }*/
 input:checked + .slider:before {
-    -webkit-transform           : translateX(var(--slider-size)) translateY(var(--height-raised-negative));
-    -ms-transform               : translateX(var(--slider-size)) translateY(var(--height-raised-negative));
-    transform                   : translateX(var(--slider-size)) translateY(var(--height-raised-negative));
+    -webkit-transform           : translateX(var(--slider-size)) translateY(var(--control-lift-rest));
+    -ms-transform               : translateX(var(--slider-size)) translateY(var(--control-lift-rest));
+    transform                   : translateX(var(--slider-size)) translateY(var(--control-lift-rest));
 }
 input:checked + .slider:hover:before {
-    -webkit-transform           : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
-    -ms-transform               : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
-    transform                   : translateX(var(--slider-size)) translateY(var(--height-focused-negative));
+    -webkit-transform           : translateX(var(--slider-size)) translateY(var(--control-lift-emphasize));
+    -ms-transform               : translateX(var(--slider-size)) translateY(var(--control-lift-emphasize));
+    transform                   : translateX(var(--slider-size)) translateY(var(--control-lift-emphasize));
 }
 /* selection */
 ::-moz-selection {
