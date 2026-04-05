@@ -40,6 +40,7 @@
                         <button class="tab_link" onclick="openTab(event,'tab_b')">&#x1F4E1;&#xFE0E;</button>
                         <button class="tab_link" onclick="openTab(event,'tab_c')">&#x26CF;&#xFE0E;</button>
                         <button class="tab_link" onclick="openTab(event,'tab_d')">&#x1F33F;&#xFE0E;</button>
+                        <button class="tab_link" onclick="openTab(event,'tab_e')">&#x1F4DA;&#xFE0E;</button>
                     </div>
                     <!--
                     ##############################################################################
@@ -112,6 +113,40 @@
                     ###############################################################################
                     -->
                     <div class="tab_content" id="tab_d">
+                        <!-- gallery -->
+                        <h1>image galleries <span class="blinking">█</span></h1
+                        <div class="gallery-container">
+                            <div class="gallery-row">
+                                <div class="gallery-cell">
+                                    <div class="gallery-photo">
+                                        <img loading="lazy" src="hamilton.jpg" onclick="galleryLightboxOpen(0)">
+                                    </div>
+                                    <div class="gallery-photo">
+                                        <img loading="lazy" src="hamilton.jpg" onclick="galleryLightboxOpen(1)">
+                                    </div>
+                                </div>
+                                <div class="gallery-cell">
+                                    <div class="gallery-photo">
+                                        <img loading="lazy" src="hamilton.jpg" onclick="galleryLightboxOpen(2)">
+                                    </div>
+                                    <div class="gallery-photo">
+                                        <img loading="lazy" src="hamilton.jpg" onclick="galleryLightboxOpen(3)">
+                                    </div>
+                            </div>
+                        </div>
+                        <div id="gallery-lightbox" class="gallery-lightbox">
+                            <button class="gallery-lightbox-close" onclick="galleryLightboxClose()">✕</button>
+                            <button class="gallery-lightbox-nav gallery-lightbox-prev" onclick="galleryLightboxFlip(-1)">‹</button>
+                            <img id="gallery-lightbox-img" src="" alt="Gallery image">
+                            <button class="gallery-lightbox-nav gallery-lightbox-next" onclick="galleryLightboxFlip(1)">›</button>
+                        </div>
+                    </div>
+                    <!--
+                    ###############################################################################
+                    TAB E
+                    ###############################################################################
+                    -->
+                    <div class="tab_content" id="tab_e">
                         <!-- code -->
                         <h1>open-source + mit-licensed <span class="blinking">█</span></h1>
                         <a href="https://github.com/nickmuse/muse.css"><code> ~ $ git clone https://github.com/nickmuse/muse.css</code></a>
@@ -119,7 +154,11 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="gallery.js"></script>
         <script type="text/javascript" src="toggle_dark.js"></script>
         <script type="text/javascript" src="tabs.js"></script>
+        <script>
+            galleryInitialize(["hamilton.jpg", "hamilton.jpg", "hamilton.jpg", "hamilton.jpg"]);
+        </script>
     </body>
 </html>
