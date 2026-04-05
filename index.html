@@ -85,16 +85,19 @@
                         <div id="my-cool-table" style="width: 100%;"></div>
                         <script>
                           new gridjs.Grid({
-                            columns: ['Server', 'Region'],
+                            columns: [
+                              { name: 'Region' },
+                              { name: 'Server' }
+                            ],
                             data: [
-                                ['172.16.0.1','North'],
-                                ['172.16.0.2','North East'],
-                                ['192.168.0.1','East'],
-                                ['192.168.0.2','South East'],
-                                ['10.0.0.1','South'],
-                                ['10.0.0.2','South West'],
-                                ['10.0.0.3','West'],
-                                ['10.0.0.4','North West']
+                                ['North', '172.16.0.1'],
+                                ['North East', '172.16.0.2'],
+                                ['East', '192.168.0.1'],
+                                ['South East', '192.168.0.2'],
+                                ['South', '10.0.0.1'],
+                                ['South West', '10.0.0.2'],
+                                ['West', '10.0.0.3'],
+                                ['North West', '10.0.0.4']
                             ],
                             search: true,
                             sort: true,

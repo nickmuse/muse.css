@@ -529,9 +529,16 @@ td {
    font-size                    : .8em;
 }
 .gridjs-table {
-    width: auto;
-    table-layout: auto;
+    width: 100%;
+    table-layout: fixed;
     box-sizing: border-box;
+}
+.gridjs-table td,
+.gridjs-table th {
+    max-width: 0 !important;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 
